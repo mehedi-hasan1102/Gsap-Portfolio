@@ -21,64 +21,97 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-COMMERCE PLATFORM",
+    title: "Plant Care",
     category: "FULL-STACK",
-    description:
-      "A modern e-commerce solution with real-time inventory, payment integration, and admin dashboard.",
-    image: "/projects/project1.webp",
-    tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    description: "Helps users manage and track plant care routines with reminders and notes.",
+    image: "/assets/images/projects/plantsc.png",
+    tech: ["React", "MongoDB", "Firebase", "Node.js"],
+    liveUrl: "https://plant-care-tracker-bd.web.app",
+    githubUrl: "https://github.com/mehedi-hasan1102/Plant-Care-Client",
     year: "2025",
   },
   {
     id: 2,
-    title: "AI DASHBOARD",
-    category: "FRONTEND",
-    description:
-      "Interactive analytics dashboard with AI-powered insights and real-time data visualization.",
-    image: "/projects/project2.webp",
-    tech: ["React", "D3.js", "TailwindCSS", "OpenAI"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    title: "Food Tracker",
+    category: "FULL-STACK",
+    description: "A production-ready food management app featuring real-time synchronization, JWT authentication, and optimized performance.",
+    image: "/assets/images/projects/food.png",
+    tech: ["React", "Tailwind CSS", "Firebase", "Express.js"],
+    liveUrl: "https://food-garden-bd.web.app",
+    githubUrl: "https://github.com/mehedi-hasan1102/Food-Garden-Client",
     year: "2025",
   },
   {
     id: 3,
-    title: "SOCIAL MEDIA APP",
+    title: "Duranta Online",
     category: "FULL-STACK",
-    description:
-      "Feature-rich social platform with real-time messaging, stories, and content sharing.",
-    image: "/projects/project3.webp",
-    tech: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    description: "Provides high-speed internet and cable services with responsive UI, support center, and admin dashboard.",
+    image: "/assets/images/projects/duranta.png",
+    tech: ["Next.js", "TypeScript", "MongoDB", "Node.js"],
+    liveUrl: "https://duranta-online.vercel.app/",
+    githubUrl: "https://github.com/mehedi-hasan1102/Duranta-Online-Client",
     year: "2024",
   },
   {
     id: 4,
-    title: "PORTFOLIO GENERATOR",
-    category: "SAAS",
-    description:
-      "Drag-and-drop portfolio builder with custom themes and one-click deployment.",
-    image: "/projects/project4.webp",
-    tech: ["React", "Node.js", "AWS", "Prisma"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    title: "Task Manager",
+    category: "FULL-STACK",
+    description: "Responsive Task Management app with real-time updates, optimized state management, and robust validation.",
+    image: "/assets/images/projects/task.png",
+    tech: ["Next.js", "TypeScript", "MongoDB", "Mongoose", "Express.js", "Zod", "TanStack Query"],
+    liveUrl: "https://meheditodo.vercel.app",
+    githubUrl: "https://github.com/mehedi-hasan1102/task-manager-client",
+    year: "2025",
+  },
+  {
+    id: 5,
+    title: "Active Arena",
+    category: "FULL-STACK",
+    description: "Playground management app with real-time synchronization, JWT authentication, and payment integration.",
+    image: "/assets/images/projects/aarena.png",
+    tech: ["React", "Stripe", "Firebase", "Tailwind CSS"],
+    liveUrl: "https://buildbox-a12.web.app",
+    githubUrl: "https://github.com/mehedi-hasan1102/Active-Arena-Client",
     year: "2024",
   },
+  {
+    id: 6,
+    title: "Event Explorer",
+    category: "FRONTEND",
+    description: "Event booking platform where users can browse and reserve seats for local events.",
+    image: "/assets/images/projects/events.png",
+    tech: ["React", "Firebase", "Node.js"],
+    liveUrl: "https://event-explorer-bd.netlify.app",
+    githubUrl: "https://github.com/mehedi-hasan1102/Event-Explorer",
+    year: "2024",
+  },
+  {
+    id: 7,
+    title: "Phudu Medical Appointment App",
+    category: "FRONTEND",
+    description: "Modern and responsive medical appointment booking app with smooth animations and booking system.",
+    image: "/assets/images/projects/phudu.png",
+    tech: ["React", "Tailwind CSS"],
+    liveUrl: "https://phudu-medical.netlify.app/",
+    githubUrl: "https://github.com/mehedi-hasan1102/Phudu-Medical-Apoinment-App",
+    year: "2024",
+  },
+  {
+    id: 8,
+    title: "Auction Gallery",
+    category: "FRONTEND",
+    description: "React-based auction app with real-time bid system.",
+    image: "/assets/images/projects/action.png",
+    tech: ["React", "Tailwind CSS", "DaisyUI"],
+    liveUrl: "https://auctiongallerybd.netlify.app",
+    githubUrl: "https://github.com/mehedi-hasan1102/Auction-Gallery",
+    year: "2024",
+  }
 ];
 
-const ProjectCard = ({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
   const numberRef = useRef<HTMLSpanElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -106,36 +139,26 @@ const ProjectCard = ({
   const handleMouseEnter = () => {
     setIsHovered(true);
     if (imageRef.current) {
-      gsap.to(imageRef.current, {
-        scale: 1.1,
-        duration: 0.6,
-        ease: "power2.out",
-      });
+      const img = imageRef.current.querySelector("img");
+      if (img) {
+        gsap.to(img, { scale: 1.1, duration: 0.6, ease: "power2.out" });
+      }
     }
     if (numberRef.current) {
-      gsap.to(numberRef.current, {
-        x: 10,
-        color: "#06B6D4",
-        duration: 0.3,
-      });
+      gsap.to(numberRef.current, { x: 10, color: "#06B6D4", duration: 0.3 });
     }
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
     if (imageRef.current) {
-      gsap.to(imageRef.current, {
-        scale: 1,
-        duration: 0.6,
-        ease: "power2.out",
-      });
+      const img = imageRef.current.querySelector("img");
+      if (img) {
+        gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out" });
+      }
     }
     if (numberRef.current) {
-      gsap.to(numberRef.current, {
-        x: 0,
-        color: "rgba(255,255,255,0.2)",
-        duration: 0.3,
-      });
+      gsap.to(numberRef.current, { x: 0, color: "rgba(255,255,255,0.2)", duration: 0.3 });
     }
   };
 
@@ -160,12 +183,7 @@ const ProjectCard = ({
 
   const handleMouseLeaveCard = () => {
     if (!cardRef.current) return;
-    gsap.to(cardRef.current, {
-      rotateX: 0,
-      rotateY: 0,
-      duration: 0.5,
-      ease: "power2.out",
-    });
+    gsap.to(cardRef.current, { rotateX: 0, rotateY: 0, duration: 0.5, ease: "power2.out" });
     handleMouseLeave();
   };
 
@@ -184,12 +202,12 @@ const ProjectCard = ({
         </span>
 
         {/* Image Container */}
-        <div className="project-image-container">
-          <div ref={imageRef} className="project-image-wrapper">
-            <div className="project-image-placeholder">
-              <span className="placeholder-text">{project.title}</span>
-            </div>
-          </div>
+        <div className="project-image-container" ref={imageRef}>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="project-image"
+          />
           <div className={`project-overlay ${isHovered ? "active" : ""}`}>
             <div className="overlay-content">
               <span className="view-project">VIEW PROJECT</span>
@@ -216,7 +234,7 @@ const ProjectCard = ({
         </div>
 
         {/* Content */}
-        <div ref={contentRef} className="project-content">
+        <div className="project-content">
           <div className="project-header">
             <span className="project-category">{project.category}</span>
             <span className="project-year">{project.year}</span>
@@ -244,7 +262,6 @@ export default function Projects() {
   useEffect(() => {
     const header = headerRef.current;
     const line = lineRef.current;
-
     if (!header || !line) return;
 
     gsap.set(header.children, { y: 100, opacity: 0 });
@@ -254,55 +271,38 @@ export default function Projects() {
       trigger: header,
       start: "top 80%",
       onEnter: () => {
-        gsap.to(header.children, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-        });
-        gsap.to(line, {
-          scaleX: 1,
-          duration: 1.2,
-          ease: "power3.inOut",
-          delay: 0.3,
-        });
+        gsap.to(header.children, { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out" });
+        gsap.to(line, { scaleX: 1, duration: 1.2, ease: "power3.inOut", delay: 0.3 });
       },
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, []);
 
   return (
     <section ref={sectionRef} className="projects-section" id="work">
       <div className="projects-container">
-        {/* Section Header */}
         <div ref={headerRef} className="projects-header">
           <span className="projects-label">FEATURED WORK</span>
           <h2 className="projects-title">
             SELECTED <span className="text-accent">PROJECTS</span>
           </h2>
           <p className="projects-subtitle">
-            A collection of projects that showcase my skills and passion for
-            building exceptional digital experiences.
+            A collection of projects that showcase my skills and passion for building exceptional digital experiences.
           </p>
         </div>
 
         <div ref={lineRef} className="projects-line" />
 
-        {/* Projects Grid */}
         <div className="projects-grid">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
-        {/* View All CTA */}
         <div className="projects-cta">
           <a
-            href="https://github.com"
+            href="https://github.com/mehedi-hasan1102"
             target="_blank"
             rel="noopener noreferrer"
             className="view-all-btn"

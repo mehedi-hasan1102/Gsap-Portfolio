@@ -61,8 +61,8 @@ export default function Navbar() {
       <header className={`navbar-minimal ${scrolled ? "hidden" : ""}`}>
         {/* Logo */}
         <Link href="/" className="nav-logo-minimal">
-          <span className="logo-char">M</span>
-          <span className="logo-char">H</span>
+          <span className="logo-char">Mehedi</span>
+          <span className="logo-char">Hasan</span>
         </Link>
 
         {/* Desktop Links */}
@@ -102,7 +102,7 @@ export default function Navbar() {
       {/* Floating Pill - visible when scrolled */}
       <div className={`nav-floating-pill ${scrolled ? "visible" : ""}`}>
         <Link href="/" className="pill-logo">
-          MH
+          Mehedi Hasan
         </Link>
         <div className="pill-divider" />
         <div className="pill-links">
