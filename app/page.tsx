@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className="text-[12vw] leading-none tracking-tight font-normal uppercase">
             CREATIVE
           </h1>
-          <h1 className="text-[12vw] leading-none tracking-tight font-normal uppercase text-[#ff4d4d]">
+          <h1 className="text-[12vw] leading-none tracking-tight font-normal uppercase text-[#06B6D4]">
             DEVELOPER
           </h1>
           <p className="mt-8 text-lg tracking-[0.3em] opacity-60 uppercase">

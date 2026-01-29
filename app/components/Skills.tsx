@@ -38,7 +38,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Node.js", icon: "⬢", color: "#339933" },
       { name: "Express", icon: "Ex", color: "#ffffff" },
       { name: "Python", icon: "🐍", color: "#3776AB" },
-      { name: "REST API", icon: "{ }", color: "#ff4d4d" },
+      { name: "REST API", icon: "{ }", color: "#06B6D4" },
       { name: "GraphQL", icon: "◈", color: "#E10098" },
       { name: "Socket.io", icon: "⚡", color: "#ffffff" },
     ],

@@ -115,7 +115,7 @@ const ProjectCard = ({
     if (numberRef.current) {
       gsap.to(numberRef.current, {
         x: 10,
-        color: "#ff4d4d",
+        color: "#06B6D4",
         duration: 0.3,
       });
     }
