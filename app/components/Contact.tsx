@@ -238,8 +238,8 @@ export default function Contact() {
         {/* Big Text Footer */}
         <div className="footer-big-text">
           <span className="big-text-scroll">
-            CREATIVE DEVELOPER • OPEN TO WORK • LET&apos;S BUILD TOGETHER •
-            CREATIVE DEVELOPER • OPEN TO WORK • LET&apos;S BUILD TOGETHER •
+            FULL-STACK DEVELOPER • OPEN TO WORK • LET&apos;S BUILD TOGETHER •
+            FULL-STACK DEVELOPER • OPEN TO WORK • LET&apos;S BUILD TOGETHER •
           
           </span>
         </div>

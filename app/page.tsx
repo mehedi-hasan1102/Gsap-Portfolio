@@ -11,7 +11,7 @@ export default function Home() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-[12vw] leading-none tracking-tight font-normal uppercase">
-            CREATIVE
+            Full-Stack
           </h1>
           <h1 className="text-[12vw] leading-none tracking-tight font-normal uppercase text-[#06B6D4]">
             DEVELOPER
