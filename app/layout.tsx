@@ -10,8 +10,8 @@ const staatliches = Staatliches({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Awwwards",
-  description: "Award-winning portfolio with stunning animations",
+  title: "Mehedi Hasan | Developer, Storyteller & Technical Writer",
+  description: "Discover Mehedi Hasan’s portfolio of Next.js and React projects, case studies, and technical writing. Learn through stories and code.",
 };
 
 export default function RootLayout({
