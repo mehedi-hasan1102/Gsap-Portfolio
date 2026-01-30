@@ -255,16 +255,8 @@ export default function Projects() {
   };
 
   return (
-    <div className="works w-full bg-black relative flex items-center justify-center">
-      <div className="bgimage h-screen w-full ">
-        <Image
-          src="/assets/images/bgImage5.png"
-          alt=""
-          className="h-full w-full object-cover"
-          fill
-          priority
-        />
-      </div>
+    <div className="works w-full bg-black relative flex items-center justify-center h-screen ">
+      
       <div className="page3container p-6 md:p-12 h-screen w-full top-0 left-0 z-[2] absolute ">
         <div className="main flex flex-col-reverse lg:flex-row opacity-[1] h-full w-full ">
           <div className="main-col h-[50%] w-full lg:h-full lg:w-[50%] ">
@@ -272,10 +264,10 @@ export default function Projects() {
               {imgSrc.map((elem, idx) => (
                 <div
                   key={idx}
-                  className="main-img-items grayscale overflow-hidden z-[1] absolute h-full w-full "
+                  className="main-img-items  overflow-hidden z-[1] absolute h-full w-full top-48 left-40"
                 >
                   <img
-                    className="image h-full w-full object-cover"
+                    className="image h-full w-full object-cover rounded-md"
                     src={elem}
                     alt=""
                   />
@@ -285,9 +277,26 @@ export default function Projects() {
           </div>
           <div className="main-col h-[50%] w-full lg:h-full lg:w-[50%] ">
             <div className="main-title-list pr-12 flex flex-col h-full w-full justify-center items-start pr-0 lg:pr-8 ">
-              <h1 className="work text-white overflow-hidden text-[17vw] mb-4 md:mb-0 lg:text-[10vw] leading-[1.2]">
-                <span className="inline-block">Projects</span>
-              </h1>
+              
+
+
+
+
+  
+          <span className="skills-label-v2">Work</span>
+          <h2 className="skills-title-v2">
+            Latest <span className="text-accent">Projects</span>
+          </h2>
+       
+
+
+
+
+
+
+
+
+
               {titles.map((elem, idx) => (
                 <div
                   key={idx}
@@ -301,7 +310,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="overlay h-[140vh] lg:h-screen w-full pointer-events-none top-0 left-0 absolute z-[4] ">
+        <div className="overlay h-[160vh] lg:h-screen w-full pointer-events-none top-0 left-0 absolute z-[4] ">
           {overcontent.map((elem, idx) => (
             <div
               key={idx}
