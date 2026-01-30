@@ -245,7 +245,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="experience-section">
+    <section ref={sectionRef} id="work" className="experience-section">
       {/* Background Elements */}
       <div className="exp-bg-gradient" />
       <div className="exp-bg-lines" />
